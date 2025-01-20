@@ -17,6 +17,19 @@ body {
       padding: 20px;
       width: 400px;
       max-width: 95%;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .todo-list h2 {
@@ -38,6 +51,7 @@ body {
       margin-right: 10px;
       background-color: #333;
       color: #fff;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .todo-input:focus {
@@ -53,11 +67,12 @@ body {
       padding: 10px 15px;
       border-radius: 4px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .add-button:hover {
       background-color: #4caf50;
+      transform: scale(1.05);
     }
 
     .todo-item {
@@ -66,10 +81,24 @@ body {
       align-items: center;
       padding: 10px 0;
       border-bottom: 1px solid #444;
+      transform: translateX(-10px);
+      opacity: 0;
+      animation: slideIn 0.3s ease-out forwards;
     }
 
     .todo-item:last-child {
       border-bottom: none;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     .delete-button {
@@ -79,9 +108,10 @@ body {
       padding: 8px 12px;
       border-radius: 4px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .delete-button:hover {
       background-color: #e53935;
+      transform: scale(1.05);
     }
